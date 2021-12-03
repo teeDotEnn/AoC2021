@@ -3,21 +3,25 @@ class Position{
   private int depth;
   private int horizontalPos;
 
+  private int aim;
+
   public int FinalPos => depth*horizontalPos;
 
-  public void ChangePosition((string direction, int magnitude) vector){
-    if(vector.direction.Equals("forward")){
-      horizontalPos += vector.magnitude;
+  public void ChangePosition(Vector vector){
+    if(vector.Direction.Equals("forward")){
+      horizontalPos += vector.Magnitude;
+      depth += aim * vector.Magnitude;
     }
-    if(vector.direction.Equals("down")){
-      depth += vector.magnitude;
+    if(vector.Direction.Equals("down")){
+      aim += vector.Magnitude;
     }
-    if(vector.direction.Equals("up")){
-      depth -= vector.magnitude;
+    if(vector.Direction.Equals("up")){
+      aim -= vector.Magnitude;
     }
   }
 
 }
+
 
 
 
