@@ -29,7 +29,7 @@ public class Utils{
         oneCount++;
       }
     }
-    if(zeroCount<oneCount){
+    if(zeroCount<=oneCount){
       return '0';
     }
     else{
